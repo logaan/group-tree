@@ -11,6 +11,7 @@
     <td><%=h group.parent_id %></td>
     <td><%=h group.name %></td>
     <td><%= link_to 'Show', group %></td>
+    <td><%= link_to 'Groups', group_groups_path(group) %></td>
     <td><%= link_to 'Edit', edit_group_path(group) %></td>
     <td><%= link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -19,4 +20,9 @@
 
 <br />
 
-<%= link_to 'New group', new_group_path %>
+<%- if @group -%>
+  <%= link_to 'New group', new_group_group_path(@group) %>
+<%- else -%>
+  <%= link_to 'New group', new_group_path %>
+<%- end -%>
+
