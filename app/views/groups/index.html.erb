@@ -22,6 +22,8 @@
 
 <%- if @group -%>
   <%= link_to 'New group', new_group_group_path(@group) %>
+<%- elsif @person -%>
+  <%= link_to 'New group', new_person_group_path(@person) %>
 <%- else -%>
   <%= link_to 'New group', new_group_path %>
 <%- end -%>
