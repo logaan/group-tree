@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :groups
+  map.root :controller => "groups"
+
+  map.resources :groups, :has_many => :groups
 
   # The priority is based upon order of creation: first created -> highest priority.
 
