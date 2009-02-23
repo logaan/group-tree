@@ -54,7 +54,7 @@ module Resourceful
         base.made_resourceful do
           response_for(:show, :index, :edit, :new) do |format|
             format.html
-            format.js
+            format.js { render :json => current_object, :callback => params[:callback] }
           end
 
           response_for(:show_fails) do |format|
